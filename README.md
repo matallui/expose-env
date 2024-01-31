@@ -5,12 +5,12 @@
 This is a simple NPM script that aims at providing a simple cross-platform way of exposing environment variables onto NPM script commands.
 
 This packages takes on the idea of [`cross-var`](https://github.com/elijahmanor/cross-var) and aims at implementing similar functionality.
-Why not just use [`cross-var`]((https://github.com/elijahmanor/cross-var)) then? Simply because the package hasn't been maintained in years and is exposed to security vulnerabilities at this point.
+Why not just use [`cross-var`](https://github.com/elijahmanor/cross-var) then? Simply because the package hasn't been maintained in years and is exposed to security vulnerabilities at this point.
 
 
 ## Installation
 
-This module is distributed via [npm][npm] and should be installed as one of your project's `devDependencies`:
+This module is distributed via [npm](https://npmjs.com) and should be installed as one of your project's `devDependencies`:
 
 ```text
 npm install --save-dev expose-var
