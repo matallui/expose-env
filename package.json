@@ -1,9 +1,10 @@
 {
   "name": "expose-env",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple package to expose environment variables to NPM script commands",
   "module": "src/index.ts",
   "main": "dist/index.js",
+  "bin": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "scripts": {
