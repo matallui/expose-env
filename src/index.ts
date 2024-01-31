@@ -1,21 +1,20 @@
 #!/usr/bin/env node
 
-import { execSync } from "child_process";
+import { spawnSync } from "child_process";
 
-function injectEnvVariables(cmd: string) {
+function injectEnvVariables(args: string[]) {
   const env = { ...process.env };
-  Object.keys(env).forEach((key) => {
-    const val = env[key];
-    if (val) {
-      const regex = new RegExp(`%${key}%`, "g");
-      cmd = cmd.replace(regex, val);
-    }
+  return args.map((arg) => {
+    Object.keys(env).forEach((key) => {
+      const regex = new RegExp(`%${key}%`, "ig");
+      arg = arg.replace(regex, process.env[key]!);
+    });
+    return arg;
   });
-  return cmd;
 }
 
-const args = process.argv.slice(2);
+const cmd = process.argv.slice(2);
 
-const cmdWithEnv = injectEnvVariables(args.join(" "));
+const cmdWithEnv = injectEnvVariables(cmd);
 
-execSync(cmdWithEnv, { stdio: "inherit" });
+spawnSync(cmdWithEnv[0], cmdWithEnv.slice(1), { stdio: "inherit" });

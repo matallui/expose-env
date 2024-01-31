@@ -1,6 +1,6 @@
 {
   "name": "expose-env",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A simple package to expose environment variables to NPM script commands",
   "keywords": [
     "env",
