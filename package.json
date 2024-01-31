@@ -1,0 +1,19 @@
+{
+  "name": "expose-env",
+  "version": "0.1.0",
+  "description": "A simple package to expose environment variables to NPM script commands",
+  "module": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun build --target=node ./src/index.ts --outfile=dist/index.js && bun run build:types",
+    "build:types": "tsc --declaration --emitDeclarationOnly --project tsconfig.types.json"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
