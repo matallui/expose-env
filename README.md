@@ -13,7 +13,7 @@ Why not just use [`cross-var`](https://github.com/elijahmanor/cross-var) then? S
 This module is distributed via [npm](https://npmjs.com) and should be installed as one of your project's `devDependencies`:
 
 ```text
-npm install --save-dev expose-var
+npm install --save-dev expose-env
 ```
 
 ## Usage
