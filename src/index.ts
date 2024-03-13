@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { spawnSync } from "child_process";
+import { spawn } from "child_process";
 
 function injectEnvVariables(args: string[]) {
   const env = { ...process.env };
@@ -17,4 +17,8 @@ const cmd = process.argv.slice(2);
 
 const cmdWithEnv = injectEnvVariables(cmd);
 
-spawnSync(cmdWithEnv[0], cmdWithEnv.slice(1), { stdio: "inherit" });
+const proc = spawn(cmdWithEnv[0], cmdWithEnv.slice(1), { stdio: "inherit" });
+
+proc.on("close", (code) => {
+  process.exit(code ?? 0);
+});
